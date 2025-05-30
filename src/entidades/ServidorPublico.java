@@ -16,6 +16,15 @@ public class ServidorPublico {
     private String lotacao;
     private String naturalidade;
     private String email;
+    private double horasExtras;
+
+    public double getHorasExtras() {
+        return horasExtras;
+    }
+
+    public void setHorasExtras(double horasExtras) {
+        this.horasExtras = horasExtras;
+    }
 
     public int getMatricula() {
         return matricula;
@@ -121,11 +130,6 @@ public class ServidorPublico {
         this.naturalidade = naturalidade;
     }
 
-    ServidorPublico isabela = new ServidorPublico();
-    ServidorPublico heila = new ServidorPublico();
-    ServidorPublico maria = new ServidorPublico();
-    ServidorPublico caio = new ServidorPublico();
-
     public String getLotacao() {
         return lotacao;
     }
@@ -140,5 +144,20 @@ public class ServidorPublico {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public double calcularSalarioHorasExtras(double horasTrabalhadas, double valorHora) {
+        double salarioMensal = salario + (horasTrabalhadas * valorHora);
+        this.horasExtras = salarioMensal;
+        return (salarioMensal);
+    }
+
+    public double calcularNumeros(double... numeros) {
+        double soma = 0;
+        for (double numero : numeros) {
+            soma +=numero;
+        }
+        System.out.println("A soma dos argumentos informados: "+soma);
+        return soma;
     }
 }

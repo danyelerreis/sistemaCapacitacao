@@ -1,8 +1,5 @@
 package aplicacao;
-
 import entidades.ServidorPublico;
-
-import java.sql.SQLOutput;
 
 public class Programa {
     public static void main (String[]args) {
@@ -12,7 +9,13 @@ public class Programa {
         isabela.setOrgao("ANVISA");
         isabela.setLotacao("Brasília");
         isabela.setEmail("isabela@gmail.");
+        isabela.setSalario(2500);
+
+        isabela.calcularSalarioHorasExtras(10, 5.60 );
+        isabela.calcularNumeros();
 
         System.out.println("Servidor : " + isabela.getNome());
+        System.out.println("Horas extras R$ %.2f: "+isabela.getHorasExtras());
+
     }
 }
