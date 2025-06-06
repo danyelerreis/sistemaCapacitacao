@@ -1,4 +1,3 @@
-
 package entidades;
 
 public class ServidorPublico {
@@ -18,7 +17,6 @@ public class ServidorPublico {
     private String naturalidade;
     private String email;
     private double horasExtras;
-
     public ServidorPublico(){};
 
     public ServidorPublico(int matricula, String nome){
@@ -30,7 +28,7 @@ public class ServidorPublico {
         this.nome = nome;
         this.cargo = cargo;
     }
-        public double getHorasExtras() {
+    public double getHorasExtras() {
         return horasExtras;
     }
 
@@ -38,18 +36,14 @@ public class ServidorPublico {
 
         this.horasExtras = horasExtras;
     }
-
     public int getMatricula() {
-
         return matricula;
     }
-
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 
     public String getNome() {
-
         return nome;
     }
 
@@ -145,6 +139,10 @@ public class ServidorPublico {
         this.naturalidade = naturalidade;
     }
 
+    ServidorPublico isabela = new ServidorPublico();
+    ServidorPublico maria = new ServidorPublico();
+    ServidorPublico jose = new ServidorPublico();
+
     public String getLotacao() {
         return lotacao;
     }
@@ -160,12 +158,12 @@ public class ServidorPublico {
     public void setEmail(String email) {
         this.email = email;
     }
-    public double calcularSalarioHorasExtras(double valorHora, double... horasTrabalhadas) {
+    public double calcularSalarioHorasExtras (double valorHora, double... horasTrabalhadas){
         double salarioMensal = 0;
         for (double valor : horasTrabalhadas) {
-            salarioMensal = valor + valorHora;
+            salarioMensal += valor * valorHora;
         }
         horasExtras = salarioMensal;
-        return salarioMensal;
+        return (salarioMensal);
     }
 }
