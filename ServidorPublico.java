@@ -1,4 +1,3 @@
-
 package entidades;
 
 public class ServidorPublico {
@@ -18,19 +17,47 @@ public class ServidorPublico {
     private String naturalidade;
     private String email;
     private double horasExtras;
-
     public ServidorPublico(){};
 
-    public ServidorPublico(int matricula, String nome){
-        this.matricula = matricula;
-        this.nome = nome;
-    }
     public ServidorPublico(int matricula, String nome, String cargo) {
         this.matricula = matricula;
         this.nome = nome;
         this.cargo = cargo;
     }
-        public double getHorasExtras() {
+
+    public ServidorPublico(int matricula, String nome, String orgao, double salario, String cargo, String lotacao, String email) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.orgao = orgao;
+        this.salario = salario;
+        this.cargo = cargo;
+        this.lotacao = lotacao;
+        this.email = email;
+    }
+
+    public ServidorPublico(int matricula, String nome, String foto, String orgao, String vinculo, double salario, int idade, int tempoDeContribuicao, String cargo, String telefone, String celular, String cpf, String lotacao, String naturalidade, String email, double horasExtras, ServidorPublico isabela, ServidorPublico maria, ServidorPublico jose) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.foto = foto;
+        this.orgao = orgao;
+        this.vinculo = vinculo;
+        this.salario = salario;
+        this.idade = idade;
+        this.tempoDeContribuicao = tempoDeContribuicao;
+        this.cargo = cargo;
+        this.telefone = telefone;
+        this.celular = celular;
+        this.cpf = cpf;
+        this.lotacao = lotacao;
+        this.naturalidade = naturalidade;
+        this.email = email;
+        this.horasExtras = horasExtras;
+//        this.isabela = isabela;
+//        this.maria = maria;
+//        this.jose = jose;
+    }
+
+    public double getHorasExtras() {
         return horasExtras;
     }
 
@@ -38,18 +65,14 @@ public class ServidorPublico {
 
         this.horasExtras = horasExtras;
     }
-
     public int getMatricula() {
-
         return matricula;
     }
-
     public void setMatricula(int matricula) {
         this.matricula = matricula;
     }
 
     public String getNome() {
-
         return nome;
     }
 
@@ -145,6 +168,10 @@ public class ServidorPublico {
         this.naturalidade = naturalidade;
     }
 
+//    ServidorPublico isabela = new ServidorPublico();
+//    ServidorPublico maria = new ServidorPublico();
+//    ServidorPublico jose = new ServidorPublico();
+
     public String getLotacao() {
         return lotacao;
     }
@@ -161,11 +188,23 @@ public class ServidorPublico {
         this.email = email;
     }
     public double calcularSalarioHorasExtras (double valorHora, double... horasTrabalhadas){
-                double salarioMensal = 0;
-                for (double valor : horasTrabalhadas) {
-                        salarioMensal += valor * valorHora;
-                }
-                horasExtras = salarioMensal;
-                return (salarioMensal);
+        double salarioMensal = 0;
+        for (double valor : horasTrabalhadas) {
+            salarioMensal += valor * valorHora;
         }
+        horasExtras = salarioMensal;
+        return (salarioMensal);
+    }
+
+    @Override
+    public String toString() {
+        return "ServidorPublico{" +
+                "matricula=" + matricula +
+                ", nome='" + nome + '\'' +
+                ", orgao='" + orgao + '\'' +
+                ", salario=" + salario + '\''+
+                ", cargo='" + cargo + '\'' +
+                ", lotacao='" + lotacao + '\'' +
+                '}';
+    }
 }
